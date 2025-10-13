@@ -11,9 +11,9 @@ screen.bgcolor('black')
 screen.listen()
 screen.tracer(0)
 
-def create_snake():
-    for _ in range(3):
-        snake.make_segments()
+def create_snake(): 
+    for _ in range(3): 
+        snake.make_segments()  
 
 create_snake()
 food = Food()

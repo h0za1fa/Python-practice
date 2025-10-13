@@ -8,7 +8,7 @@ class ScoreBoard(Turtle):
         self.color('white')
         self.goto(0,250)
         self.level = 0
-        with open('snake game\scores.txt') as file:
+        with open('scores.txt') as file:
             self.highscore = int(file.read())
     
     def pl_level(self):
