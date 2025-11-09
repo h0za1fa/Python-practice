@@ -1,4 +1,6 @@
-import requests
-question_api = requests.get('https://opentdb.com/api.php?amount=10&category=18&type=boolean')
-question_api.raise_for_status()
-question_data = question_api.json()['results']
+import requests as rq
+
+question_data = []
+
+file = rq.get(url='https://opentdb.com/api.php?amount=10&type=boolean')
+question_data = file.json()['results']
