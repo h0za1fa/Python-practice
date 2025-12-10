@@ -24,19 +24,21 @@ screen.onkeypress(snake.turn_left, "d")
 screen.onkeypress(snake.turn_right, "a")
 
 game_on = True
-while game_on == True:
-    screen.update()
-    time.sleep(0.1)
-    score.pl_level()
-    snake.movement()
-    if snake.segments[0].distance(food.xcor(),food.ycor()) < 20:
-        food.refresh()
-        snake.make_segments()
-        score.level_up()
-    if snake.self_collision() == True:
-        score.update_highscore()
-        snake.reset()
-    if snake.segments[0].xcor() > 290 or snake.segments[0].xcor() < -290 or snake.segments[0].ycor() > 290 or snake.segments[0].ycor() < -290 :
-        score.update_highscore()
-        snake.reset()
+try:
+    while game_on == True:
+        screen.update()
+        time.sleep(0.1)
+        snake.movement()
+        if snake.segments[0].distance(food.xcor(),food.ycor()) < 20:
+            food.refresh()
+            snake.make_segments()
+            score.level_up()
+        if snake.self_collision() == True:
+            score.update_highscore()
+            snake.reset()
+        if snake.segments[0].xcor() > 290 or snake.segments[0].xcor() < -290 or snake.segments[0].ycor() > 290 or snake.segments[0].ycor() < -290 :
+            score.update_highscore()
+            snake.reset()
+except (t.Terminator, t.TclError):
+    pass
 screen.mainloop()

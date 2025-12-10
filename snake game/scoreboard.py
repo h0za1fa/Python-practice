@@ -1,4 +1,5 @@
 from turtle import Turtle
+import os
 
 class ScoreBoard(Turtle):
     def __init__(self):
@@ -8,8 +9,10 @@ class ScoreBoard(Turtle):
         self.color('white')
         self.goto(0,250)
         self.level = 0
-        with open('scores.txt') as file:
+        self.score_file = os.path.join(os.path.dirname(__file__), 'scores.txt')
+        with open(self.score_file) as file:
             self.highscore = int(file.read())
+        self.pl_level()
     
     def pl_level(self):
         self.clear()
@@ -17,6 +20,7 @@ class ScoreBoard(Turtle):
     
     def level_up(self):
         self.level += 1
+        self.pl_level()
     
     def game_over(self):
         self.goto(0,0)
@@ -25,7 +29,7 @@ class ScoreBoard(Turtle):
     def update_highscore(self):
         if self.level > self.highscore :
             self.highscore = self.level
-            with open('snake game\scores.txt' , mode = 'w') as file :
+            with open(self.score_file, mode = 'w') as file :
                 file.write(f'{self.highscore}\n')
         self.level = 0
         self.pl_level()
