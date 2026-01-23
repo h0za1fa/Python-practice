@@ -1,12 +1,12 @@
 import turtle as tr
 import pandas as pd
 
-states_data = pd.read_csv('us states/50_states.csv')
+states_data = pd.read_csv('50_states.csv')
 tim = tr.Turtle()
 tim.penup()
 tim.ht()
 screen = tr.Screen()
-image = 'us states/blank_states_img.gif'
+image = 'blank_states_img.gif'
 screen.addshape(image)
 tr.shape(image)
 total_ans = 0
