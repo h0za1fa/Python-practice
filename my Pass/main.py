@@ -4,7 +4,7 @@ import random
 import pyperclip as pyc
 import json
 
-email = 'hozaifaco@gmail.com'
+email = 'YOUR_EMAIL_HERE'
 
 # ---------------------------- SEARCH ------------------------------- #
 

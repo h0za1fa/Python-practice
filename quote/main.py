@@ -9,8 +9,8 @@ with open('quote/quotes.txt') as file :
 with open('quote/mails.txt') as file:
     emails = file.readlines()
 
-my_gmail = 'hozaifaco@gmail.com'
-my_password = ''
+my_gmail = 'YOUR_EMAIL_HERE'
+my_password = 'YOUR_PASSWORD_HERE'
 
 now = datetime.datetime.now()
 

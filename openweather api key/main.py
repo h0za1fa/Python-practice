@@ -4,7 +4,7 @@ from twilio.rest import Client
 
 
 
-key = ''
+key = os.getenv('OPENWEATHER_API_KEY')
 lat = 30.197838
 lon = 71.4719683
 
@@ -33,14 +33,14 @@ for step in range(4):
 
 if bring_umbrella:
     status = 'Bring your shelter'
-    account_sid = ""
-    auth_token = ""
+    account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+    auth_token = os.getenv('TWILIO_AUTH_TOKEN')
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
         body= status,
-        from_="+",
-        to="+",
+        from_=os.getenv('TWILIO_NUMBER'),
+        to=os.getenv('PHONE_NUMBER'),
     )
 
     print('sent message')
