@@ -85,7 +85,7 @@ def write_data():
 window = tk.Tk()
 window.config(padx=50,pady=50)
 
-image = tk.PhotoImage(file='my Pass/logo.png')
+image = tk.PhotoImage(file='logo.png')
 logo_canvas = tk.Canvas(width=200,height=200)
 logo_canvas.create_image(100,100,image=image)
 logo_canvas.grid(row=1,column=2)
