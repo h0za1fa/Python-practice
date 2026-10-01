@@ -6,5 +6,4 @@ class Employee:
 
     def get_raise(self, raised = 5000):
         self.salary = self.salary + raised
-
-    
+        

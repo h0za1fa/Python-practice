@@ -11,3 +11,10 @@ def test_give_default_raise(employee):
     salary = employee.salary
     employee.get_raise()
     assert employee.salary == salary + 5000
+
+def test_give_custom_raise(employee):
+    salary = employee.salary
+    custom_raise = 55500
+    employee.get_raise(raised= custom_raise)
+    assert employee.salary == salary + custom_raise
+
